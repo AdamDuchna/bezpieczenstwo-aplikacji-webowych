@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    
+  backend:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./backend
+
+  frontend:
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend
+    volumes:
+      - /opt/app/node_modules
+
